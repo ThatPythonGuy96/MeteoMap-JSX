@@ -3,6 +3,7 @@ import { ArrowRightLeft, FileUp, Download, AlertCircle, Loader2, RefreshCw } fro
 import { CONVERTERS } from "./converters.jsx";
 import { LeafletMap } from "./LeafMap.jsx";
 import { useNavigate, useParams } from "react-router-dom";
+import ConverterPageInfo from "./ConverterPageInfo.jsx";
 
 const LAYER_COLORS = [
     "#1a6b3c", "#2563eb", "#d97706", "#9333ea",
@@ -101,7 +102,7 @@ const ConverterPage = () => {
 					<h1 className="text-lg font-semibold text-foreground">Format Converter</h1>
 				</div>
 				<p className="text-sm text-muted-foreground mb-6">
-					Convert between GIS file formats entirely in your browser — nothing is uploaded to a server.
+					{converter.description}
 				</p>
 
 				{/* Conversion type picker */}
@@ -120,7 +121,8 @@ const ConverterPage = () => {
 						</button>
 					))}
 				</div>
-
+				
+				{/* Upload and Map */}
 				<div className="flex flex-1 min-h-0 gap-2">
 					<div className="flex flex-col gap-6 flex-shrink-0">
 						<div className="flex w-80 flex-shrink-0 flex-col rounded-lg border border-border bg-card overflow-hidden">
@@ -214,6 +216,10 @@ const ConverterPage = () => {
 					<main className="flex-1 w-100 relative overflow-hidden rounded-lg border border-border bg-card z-0">
 						<LeafletMap basemap={basemap} onBasemapChange={setBasemap} files={files}/>
 					</main>
+				</div>
+				
+				<div className="flex flex-1 gap-2">
+					<ConverterPageInfo def={converter} />
 				</div>
 			</div>
 		</div>
