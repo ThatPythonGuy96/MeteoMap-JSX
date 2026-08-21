@@ -34,7 +34,8 @@ export function Dropdown({ label, icon, items }) {
 					{items.map((item) => (
 						<Link
 							key={item.label}
-							to={`/converter/${item.id}`}
+							to={`${item.link}`}
+							onClick={() => setOpen(false)}
 							className="w-full flex items-center gap-2.5 px-3.5 py-2 text-sm text-popover-foreground hover:bg-accent/10 hover:text-accent transition-colors text-left"
 						>
 							<span className="text-muted-foreground">{item.icon}</span>

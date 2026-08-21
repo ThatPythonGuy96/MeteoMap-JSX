@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useMemo } from "react";
+import { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import { ArrowRightLeft, FileUp, Download, AlertCircle, Loader2, RefreshCw } from "lucide-react";
 import { CONVERTERS } from "./converters.jsx";
 import { LeafletMap } from "./LeafMap.jsx";
@@ -39,10 +39,22 @@ const ConverterPage = () => {
 		setFileBuffer(null);
 		setFileName("");
 		resetOutput();
-		navigate({id})
+		navigate(`/converter/${id}`)
 	};
 
+	useEffect(() => {
+		if (!initialId) return;
+		if (initialId === converterId) return;
+		// update converter when the route param changes
+		const next = CONVERTERS.some((c) => c.id === initialId) ? initialId : CONVERTERS[0].id;
+		setConverterId(next);
+		setFileBuffer(null);
+		setFileName("");
+		resetOutput();
+	}, [initialId]);
+
 	const loadFile = useCallback((file) => {
+		console.log(file)
 		if (!file) return;
 		setFileName(file[0].name);
 		resetOutput();
@@ -54,7 +66,9 @@ const ConverterPage = () => {
             size: fileSize(f.size),
             color: LAYER_COLORS[(files.length + i) % LAYER_COLORS.length],
         }));
+		console.log('next', next)
         setFiles((prev) => [...prev, ...next]);
+		console.log('files', files)
 	}, [files.length]);
 
 	function fileSize(bytes) {
@@ -68,7 +82,8 @@ const ConverterPage = () => {
 		setOutput("");
 		setLoading(true);
 		try {
-			const input = fileBuffer;
+			const input = files[0];
+			console.log(input)
 			if (!input) throw new Error("Add some input first — upload a file or paste content below.");
 			const result = await converter.convert(input);
 			setOutput(result);
@@ -152,7 +167,7 @@ const ConverterPage = () => {
 								>
 									<FileUp size={22} className="text-muted-foreground" />
 									{fileName ? (
-										<p className="text-xs font-mono text-foreground">{fileName}</p>
+										<p className="text-xs font-mono text-foreground w-70 truncate">{fileName}</p>
 									) : (
 										<p className="text-xs text-muted-foreground text-center px-4">
 											Drop a {converter.accept} file here, or click to browse

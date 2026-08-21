@@ -1,20 +1,33 @@
 import { Globe, Ruler, Layers, X, PenLine } from "lucide-react";
 import { CONVERTERS } from './converters'
- 
+import { TOOLS } from "./tools";
+import { ANALYSES } from "./analyses"
+
 export function getConverterItems(openConverter) {
-    return CONVERTERS.map((t) => ({
-        label: t.label,
-        icon: t.icon,
-        id: t.id,
+    return CONVERTERS.map((c) => ({
+        label: c.label,
+        icon: c.icon,
+        id: c.id,
+        link:  `/converter/${c.id}`
     }));
 }
 
-export const toolItems = [
-    { label: "Draw", icon: <PenLine size={14} /> },
-    { label: "Measure Distance", icon: <Ruler size={14} /> },
-    { label: "Measure Area", icon: <Ruler size={14} /> },
-    { label: "Buffer", icon: <Globe size={14} /> },
-    { label: "Clip", icon: <X size={14} /> },
-    { label: "Dissolve", icon: <Layers size={14} /> },
-];
+export function getToolItems(openTool) {
+    return TOOLS.map((t) => ({
+        label: t.label,
+        icon: t.icon,
+        id: t.id,
+        link: `/tool/${t.id}`
+    }))
+}
+
+export function getAnalysisItems(openAnalysis) {
+    return ANALYSES.map((a) => ({
+        label: a.label,
+        icon: a.icon,
+        id: a.id,
+        link: `/analysis/${a.id}`
+    }))
+}
+
 
