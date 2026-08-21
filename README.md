@@ -1,7 +1,8 @@
 
-  # Untitled
 
-  This is a code bundle for Untitled. The original project is available at https://www.figma.com/design/FlIDag24H2RVPbMXqzVgKn/Untitled.
+MeteoGIS
+  
+  Frontend for the MeteoGIS Project. The original project is available at https://meteomap.onrender.com.
 
   ## Running the code
 
