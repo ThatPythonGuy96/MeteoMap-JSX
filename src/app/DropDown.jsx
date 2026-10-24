@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import {
-    ChevronDown
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Dropdown({ label, icon, items }) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { TOOLS } from './tools';
+import { TOOLS } from '../tools/tools.jsx';
 import { Globe, CheckCircle2, HelpCircle, Settings2, Play, Minus, TriangleRight } from "lucide-react";
 
 function ParamInput({ input }) {

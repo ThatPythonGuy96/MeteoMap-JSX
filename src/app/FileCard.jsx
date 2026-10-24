@@ -1,6 +1,4 @@
-import {
-	Trash2
-} from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 export function FileCard({ file, onRemove }) {
     return (

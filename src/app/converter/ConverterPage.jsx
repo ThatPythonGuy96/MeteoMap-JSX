@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import { ArrowRightLeft, FileUp, Download, AlertCircle, Loader2, RefreshCw } from "lucide-react";
 import { CONVERTERS } from "./converters.jsx";
-import { LeafletMap } from "./LeafMap.jsx";
+import { LeafletMap } from "../LeafMap.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import ConverterPageInfo from "./ConverterPageInfo.jsx";
 

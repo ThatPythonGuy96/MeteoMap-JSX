@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { useParams } from 'react-router-dom';
-import { ANALYSES } from './analyses';
+import { ANALYSES } from './analysisData';
 import { Info, Upload, CheckCircle2, HelpCircle, BarChart2, Settings2, Play, CircleDot, BarChart } from "lucide-react";
 import { BarChart as BChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, ResponsiveContainer, ReferenceLine } from "recharts";
 

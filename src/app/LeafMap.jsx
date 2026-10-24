@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { BASEMAPS } from "./BaseMaps.jsx";
-import { BasemapPanel } from "./BasemapPanel.jsx";
+import { BASEMAPS } from "./basemap/BaseMaps.jsx";
+import { BasemapPanel } from "./basemap/BasemapPanel.jsx";
 import { ZoomIn, ZoomOut } from "lucide-react";
 import shp from "shpjs";
 import { kml, gpx } from "@tmcw/togeojson";

@@ -1,7 +1,6 @@
-import { Globe, Ruler, Layers, X, PenLine } from "lucide-react";
-import { CONVERTERS } from './converters'
-import { TOOLS } from "./tools";
-import { ANALYSES } from "./analyses"
+import { CONVERTERS } from '../converter/converters'
+import { TOOLS } from "../tools/tools";
+import { ANALYSES } from "../analysis/analysisdata.jsx"
 
 export function getConverterItems(openConverter) {
     return CONVERTERS.map((c) => ({

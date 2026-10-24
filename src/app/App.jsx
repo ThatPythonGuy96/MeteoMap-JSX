@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Home';
 import Index from './Index';
-import ConverterPage from './ConverterPage';
-import Analysis from './Analysis';
-import Tool from './Tool';
+import ConverterPage from './converter/ConverterPage';
+import Analysis from './analysis/Analysis';
+import Tool from './tools/Tool';
 
 export default function App() {
 	return (

@@ -48,6 +48,7 @@ const HOTSPOT_DATA = [
 	{ label: "Jul", value: 3.9 }, { label: "Aug", value: 2.7 }, { label: "Sep", value: 5.5 },
 	{ label: "Oct", value: 8.2 }, { label: "Nov", value: 12.1 }, { label: "Dec", value: 7.3 },
 ];
+
 export const ANALYSES = [
 	{
 		id: "spi",
