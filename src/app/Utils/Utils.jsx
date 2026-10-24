@@ -1,6 +1,6 @@
+import { ANALYSES } from '../analysis/analyses';
 import { CONVERTERS } from '../converter/converters'
 import { TOOLS } from "../tools/tools";
-import { ANALYSES } from "../analysis/analysisdata.jsx"
 
 export function getConverterItems(openConverter) {
     return CONVERTERS.map((c) => ({
